@@ -232,7 +232,7 @@ class Runner
     /**
      * Exits if the minimum requirements of PHP_CodeSniffer are not met.
      *
-     * @return array
+     * @return void
      * @throws \PHP_CodeSniffer\Exceptions\DeepExitException If the requirements are not met.
      */
     public function checkRequirements()
@@ -487,6 +487,7 @@ class Runner
                         $file = $todo->current();
 
                         if ($file->ignored === true) {
+                            $todo->next();
                             continue;
                         }
 
